@@ -1,0 +1,25 @@
+[package]
+name = "immutableowner"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "immutableowner"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl = { version = "0.31.1", features = ["token_2022", "associated_token"] }
+
+# Instead of using spl-token-2022 directly, use it through anchor-spl
+# to avoid version conflicts with solana-program
+
